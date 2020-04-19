@@ -36,7 +36,7 @@ create_list (Node** head, Node** tail) {
         Node* n = (Node*)calloc(1, sizeof(Node));
         n->value = i;
 
-        if (*head == NULL) {
+        if (!*head) {
             arr[i] = *head = *tail = n;
         } else {
             arr[i] = (*tail)->next = n; 
@@ -83,7 +83,7 @@ duplicate_list(Node* head, Node** dup_head, Node **dup_tail) {
         Node *tmp;
 
         n->value = cur->value;
-        if (NULL == *dup_head) {
+        if (!*dup_head) {
             *dup_head = *dup_tail = n;
         } else {
             (*dup_tail)->next = n; 
