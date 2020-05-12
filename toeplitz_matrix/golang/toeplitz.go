@@ -11,18 +11,10 @@ func is_toeplitz(arr [][]int) bool {
 
 	//sweep the matrix from top-right to bottom-left
 	for x := width - 1; x > -1; x-- {
-		last := -99999
-
 		//progressively check in left->right direction for every i+1,j+1
 		for i, j := x, 0; j < height && i < width; i, j = i+1, j+1 {
-			if last == -99999 {
-				last = arr[j][i]
-
-			} else if last != arr[j][i] {
+			if j > 0 && arr[j][i] != arr[j-1][i-1] {
 				return false
-
-			} else {
-				last = arr[j][i]
 			}
 		}
 	}
