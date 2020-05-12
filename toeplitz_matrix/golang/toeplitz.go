@@ -1,3 +1,5 @@
+//check if the given matrix is toeplitz
+
 package main
 
 import "fmt"
@@ -11,7 +13,7 @@ func is_toeplitz(arr [][]int) bool {
 	for x := width - 1; x > -1; x-- {
 		last := -99999
 
-		//progressively check in right->left direction for every i+1,j+1
+		//progressively check in left->right direction for every i+1,j+1
 		for i, j := x, 0; j < height && i < width; i, j = i+1, j+1 {
 			if last == -99999 {
 				last = arr[j][i]
